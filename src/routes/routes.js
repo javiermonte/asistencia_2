@@ -1,24 +1,43 @@
-import Habitaciones from '../components/Habitaciones.vue';
-import Contacto from '../components/Contacto.vue';
-import Deportes from '../components/Deportes.vue';
-import Servicios from '../components/Servicios.vue';
-import Home from '../components/Home.vue';
-import App from '../App.vue';
 
-import { createRouter, createWebHistory } from 'vue-router';
+import Home from "../components/Home.vue"
+import Login from "../components/Login.vue"
+import Bitacora from "../components/Bitacora.vue"
+import Aprendiz from "../components/Aprendices.vue"
+import Ficha from "../components/Ficha.vue"
+import Usuario from "../components/Usuario.vue"
+import InicioMain from "../components/InicioMain.vue"
+import Password from "../components/Password.vue"
+import Asistencia from "../components/Asistencia.vue"
+// import Main from "../components/Main.vue"
+// import Informes from "../components/Informes.vue"
 
 
-export const routes = [
-    { path: '/', component: Home},
-    { path: '/Home', component: Home},
-    { path: '/Habitaciones', component: Habitaciones },
-    { path: '/Contacto', component: Contacto },
-    { path: '/Deportes', component: Deportes },
-    { path: '/Servicios', component: Servicios }
-];
+import { createRouter, createWebHashHistory } from "vue-router"
+
+
+const routes = [
+    { path: "/", component: Login },
+
+    {
+        path: "/Home", component: Home, children: [
+            { path: "", redirect: "/Home/InicioMain" },
+            { path: "InicioMain", component: InicioMain },
+            { path: "Bitacora", component: Bitacora },
+            { path: "Aprendiz", component: Aprendiz },
+            { path: "Ficha", component: Ficha },
+            { path: "Usuario", component: Usuario}, 
+            // { path: "Informes", component: Informes}, 
+           
+                 
+        ]
+    },
+    // {path:"/", component:Main},
+    {path:"/Password", component: Password},
+    {path: "/Asistencia", component: Asistencia}
+
+]
 
 export const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes
-});
-
+})

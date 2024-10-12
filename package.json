@@ -11,6 +11,12 @@
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
     "@quasar/extras": "^1.16.11",
+    "axios": "^1.7.3",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.5.3",
+    "pinia": "^2.2.2",
     "quasar": "^2.16.4",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
